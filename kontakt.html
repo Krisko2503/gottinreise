@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – Göttinreise</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="navbar scrolled" id="navbar">
+  <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Logo" /><span class="nav-logo-text">Göttinreise</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#meditationen">Meditationen</a></li>
+    <li><a href="index.html#bundle">Bundle</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#bundle" class="nav-cta">Jetzt kaufen</a></li>
+  </ul>
+  <button class="nav-burger" id="burger"><span></span><span></span><span></span></button>
+</nav>
+<div style="padding-top:90px;max-width:600px;margin:0 auto;padding-bottom:5rem;padding-left:1.5rem;padding-right:1.5rem">
+  <a href="index.html" class="product-back" style="display:inline-flex;align-items:center;gap:.4rem;margin-top:1.5rem;color:var(--text-light);text-decoration:none">← Zurück</a>
+  <h1 class="section-title" style="margin-top:1rem">Kontakt</h1>
+  <div class="divider"></div>
+  <p style="margin-top:1.6rem;font-size:1rem;color:var(--text-mid)">Wir freuen uns von dir zu hören. Schreib uns eine Nachricht und wir melden uns innerhalb von 24 Stunden bei dir.</p>
+  <form style="margin-top:2.5rem;display:flex;flex-direction:column;gap:1.2rem" onsubmit="handleContact(event)">
+    <div>
+      <label style="display:block;font-size:.85rem;font-weight:600;color:var(--text-mid);margin-bottom:.4rem">Name</label>
+      <input type="text" placeholder="Dein Name" required style="width:100%;padding:.9rem 1.1rem;border:1.5px solid var(--border);border-radius:12px;font-family:inherit;font-size:1rem;background:var(--white);color:var(--text-dark);outline:none;transition:border .25s" onfocus="this.style.borderColor='var(--magenta)'" onblur="this.style.borderColor='var(--border)'" />
+    </div>
+    <div>
+      <label style="display:block;font-size:.85rem;font-weight:600;color:var(--text-mid);margin-bottom:.4rem">E-Mail</label>
+      <input type="email" placeholder="deine@email.de" required style="width:100%;padding:.9rem 1.1rem;border:1.5px solid var(--border);border-radius:12px;font-family:inherit;font-size:1rem;background:var(--white);color:var(--text-dark);outline:none;transition:border .25s" onfocus="this.style.borderColor='var(--magenta)'" onblur="this.style.borderColor='var(--border)'" />
+    </div>
+    <div>
+      <label style="display:block;font-size:.85rem;font-weight:600;color:var(--text-mid);margin-bottom:.4rem">Nachricht</label>
+      <textarea rows="5" placeholder="Deine Nachricht..." required style="width:100%;padding:.9rem 1.1rem;border:1.5px solid var(--border);border-radius:12px;font-family:inherit;font-size:1rem;background:var(--white);color:var(--text-dark);outline:none;resize:vertical;transition:border .25s" onfocus="this.style.borderColor='var(--magenta)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:100%">NACHRICHT SENDEN</button>
+    <div id="contact-success" style="display:none;padding:1rem;background:var(--peach-bg);border:1px solid var(--peach);border-radius:10px;text-align:center;color:var(--magenta-dark);font-weight:600">
+      ✅ Vielen Dank! Deine Nachricht wurde erfolgreich gesendet.
+    </div>
+  </form>
+</div>
+<script src="main.js"></script>
+<script>
+function handleContact(e) {
+  e.preventDefault();
+  document.getElementById('contact-success').style.display = 'block';
+  e.target.reset();
+}
+</script>
+</body></html>
