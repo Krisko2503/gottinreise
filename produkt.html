@@ -5,23 +5,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title id="page-title">Meditation – Göttinreise</title>
-  <meta name="description"
-    content="Entdecke unsere exklusive Meditation von Göttinreise – für tiefe innere Transformation und Klarheit." />
+  <meta name="description" content="Entdecke unsere exklusive Meditation von Göttinreise – für tiefe innere Transformation und Klarheit." />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar scrolled" id="navbar">
     <a href="index.html" class="nav-logo">
-      <img src="images/logo.png" alt="Göttinreise Logo" />
+      <!-- logo-white: visible on transparent (hero) state -->
+      <img src="images/logo.png" alt="Göttinreise Logo" class="logo-white" style="filter:brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.5))" />
+      <!-- logo-dark: visible when navbar is solid white (scrolled) -->
+      <img src="images/logo.png" alt="Göttinreise Logo" class="logo-dark" />
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html#meditationen">Meditationen</a></li>
       <li><a href="index.html#bundle">Bundle</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
-      <li><a href="index.html#bundle" class="nav-cta">Jetzt kaufen</a></li>
+      <li><a href="index.html#bundle" class="nav-cta">Bundle sichern</a></li>
     </ul>
     <button class="nav-burger" id="burger" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
@@ -32,47 +34,101 @@
   <div class="product-page">
     <div class="product-page-inner">
 
+      <!-- Left: Image -->
       <div>
         <a href="index.html" class="product-back">← Zurück zur Übersicht</a>
         <img id="prod-img" src="images/product1.jpg" alt="Produktbild" class="product-page-img" />
       </div>
 
+      <!-- Right: Info -->
       <div class="product-page-info">
-        <span class="product-page-tag" id="prod-tag">Digitaler Download</span>
-        <h1 class="product-page-title" id="prod-title">Positive Affirmationen für den Alltag</h1>
-        <p class="product-page-sub" id="prod-sub">Geführte Meditation zur Stärkung deiner inneren Kraft &amp;
-          Selbstvertrauen</p>
+        <span class="product-page-tag">✨ Digitaler Download · MP3</span>
+        <h1 class="product-page-title" id="prod-title">Meditation</h1>
+        <p class="product-page-sub" id="prod-sub"></p>
+        <p class="product-page-tagline" id="prod-tagline"></p>
         <div class="divider"></div>
-        <p class="product-page-price">29,00 €</p>
+        <p class="product-page-price" id="prod-price">19,90 €</p>
 
         <div class="product-page-badges">
-          <span class="badge"><span>⬇️</span> Digitaler Download</span>
-          <span class="badge"><span>🎧</span> Hohe Audioqualität</span>
+          <span class="badge"><span>⬇️</span> Sofort-Download</span>
+          <span class="badge"><span>🎧</span> Studio-Qualität</span>
           <span class="badge"><span>🌸</span> Sofort verfügbar</span>
+          <span class="badge"><span>💳</span> Apple & Google Pay</span>
         </div>
 
-        <div class="product-page-desc" id="prod-desc">
-          Tauche ein in die tiefe Kraft der Selbstliebe. Finde Ruhe, Klarheit und eine tiefe Verbindung
-          zu deinem wahren Selbst. Diese geführte Meditation begleitet dich auf einer inneren Reise,
-          die dein Leben nachhaltig bereichern wird.
-        </div>
-
-        <a href="#" class="btn btn-primary" id="add-to-cart-btn" style="width:100%;justify-content:center">
-          IN DEN WARENKORB
+        <a href="#" class="btn btn-primary product-buy-btn" id="prod-buy-btn">
+          Jetzt kaufen – 19,90 €
         </a>
 
-        <div
-          style="margin-top:1.6rem;padding:1.2rem 1.4rem;background:var(--peach-bg);border-radius:12px;font-size:.88rem;color:var(--text-mid)">
-          <strong>✅ Sicher bezahlen</strong> – SSL-verschlüsselt<br>
-          <strong>📧 Sofortiger Versand</strong> – Download-Link per E-Mail<br>
-          <strong>💬 Fragen?</strong> – <a href="kontakt.html" style="color:var(--magenta)">Kontaktiere uns</a>
+        <div class="product-trust">
+          <strong>✅ Sicher bezahlen</strong> – SSL-verschlüsselt via Stripe<br>
+          <strong>📱 Apple Pay & Google Pay</strong> – mit einem Klick<br>
+          <strong>📥 Sofortiger Zugang</strong> – Download-Link nach Zahlung<br>
+          <strong>💬 Fragen?</strong> – <a href="kontakt.html">Kontaktiere uns</a>
         </div>
-      </div>
 
+        <!-- Accordion Content Sections -->
+        <div class="product-sections">
+
+          <div class="product-section">
+            <button class="product-section-toggle">
+              Beschreibung
+              <em class="ps-icon">+</em>
+            </button>
+            <div class="product-section-body">
+              <p id="prod-desc"></p>
+            </div>
+          </div>
+
+          <div class="product-section">
+            <button class="product-section-toggle">
+              Für wen ist diese Meditation?
+              <em class="ps-icon">+</em>
+            </button>
+            <div class="product-section-body">
+              <p style="margin-bottom:.8rem;font-size:.9rem;color:var(--text-mid)">Diese Meditation ist für dich, wenn du…</p>
+              <ul id="prod-for-whom"></ul>
+            </div>
+          </div>
+
+          <div class="product-section">
+            <button class="product-section-toggle">
+              So nutzt du diese Meditation
+              <em class="ps-icon">+</em>
+            </button>
+            <div class="product-section-body">
+              <ul id="prod-how-to-use"></ul>
+            </div>
+          </div>
+
+          <div class="product-section">
+            <button class="product-section-toggle">
+              Warum es funktioniert
+              <em class="ps-icon">+</em>
+            </button>
+            <div class="product-section-body">
+              <ul id="prod-why-works"></ul>
+            </div>
+          </div>
+
+          <div class="product-section">
+            <button class="product-section-toggle">
+              Was sich für dich verändern kann
+              <em class="ps-icon">+</em>
+            </button>
+            <div class="product-section-body">
+              <ul id="prod-what-changes"></ul>
+            </div>
+          </div>
+
+        </div>
+        <!-- /accordion -->
+
+      </div>
     </div>
 
-    <!-- Related products -->
-    <div class="section-inner" style="padding:3rem 1.5rem">
+    <!-- Related Products -->
+    <div class="related-section section-inner">
       <div style="text-align:center;margin-bottom:2.5rem">
         <span class="eyebrow">Weitere Meditationen</span>
         <h2 class="section-title center">Das könnte dir auch gefallen</h2>
@@ -91,7 +147,7 @@
             <img src="images/logo.png" alt="Göttinreise Logo" />
           </a>
         </div>
-        <p>Premium geführte Meditationen für Körper, Geist &amp; Seele. Eine neue Dimension innerer Stärke.</p>
+        <p>Premium geführte Meditationen für Frauen. Eine tiefe Reise zurück zu dir selbst.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
