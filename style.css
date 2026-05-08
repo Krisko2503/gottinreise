@@ -298,16 +298,76 @@ footer { background:var(--text-dark); color:rgba(255,255,255,.75); padding:4.5re
   .footer-inner { grid-template-columns:1fr 1fr; }
   .products-grid { grid-template-columns:repeat(2,1fr); }
 }
+
+/* ── MOBILE (≤768px) ── */
+@media(max-width:768px) {
+
+  /* 1. Hero: push content below the floating header so nothing overlaps */
+  .hero { align-items:flex-start; }
+  .hero-content {
+    padding-top:130px;   /* clears the 80px navbar + breathing room */
+    padding-left:1.4rem;
+    padding-right:1.4rem;
+    max-width:100%;
+  }
+
+  /* 2. Hero typography: smaller, looser, and with text-shadow for contrast */
+  .hero-eyebrow {
+    font-size:.72rem;
+    text-shadow:0 2px 5px rgba(0,0,0,0.45);
+  }
+  .hero-title {
+    font-size:2rem;   /* override clamp — phone-safe fixed size */
+    line-height:1.3;
+    text-shadow:0 2px 5px rgba(0,0,0,0.4);
+  }
+  .hero-title em { text-shadow:0 2px 5px rgba(0,0,0,0.4); }
+  .hero-sub {
+    font-size:.95rem;
+    line-height:1.8;
+    text-shadow:0 1px 4px rgba(0,0,0,0.35);
+    margin-bottom:2rem;
+  }
+
+  /* 3. Section padding: breathing room on left & right edges */
+  section { padding:3.5rem 1.5rem; }
+  .section-inner { padding:0; }   /* inner already constrained by section padding */
+
+  /* 4. Bullet alignment: ensure star icon doesn't drift off-axis */
+  .value-list li,
+  .bundle-includes li,
+  .product-section-body ul li {
+    align-items:flex-start;
+    gap:.75rem;
+  }
+  .value-list li::before,
+  .bundle-includes li::before,
+  .product-section-body ul li::before {
+    margin-top:.18rem;  /* fine-tune vertical alignment with first text line */
+    flex-shrink:0;
+  }
+}
+
+/* ── SMALL PHONES (≤620px) ── */
 @media(max-width:620px) {
+  /* Navbar */
+  .navbar { padding:0 1rem; }
+  /* Shrink logos so they don't crowd the burger on small screens */
+  .nav-logo .logo-white,
+  .nav-logo .logo-dark { width:160px; }
+
+  /* Mobile nav menu */
   .nav-links { display:none; position:fixed; top:80px; left:0; width:100%; background:#fff; flex-direction:column; padding:1.5rem; gap:1.2rem; border-bottom:1px solid var(--border); }
   .nav-links.open { display:flex; }
-  .nav-links a { color:var(--text-mid) !important; }
+  .nav-links a { color:var(--text-dark) !important; }
   .nav-burger { display:flex; }
+
+  /* Grids */
   .benefits-grid,.testimonials-grid { grid-template-columns:1fr; }
   .footer-inner { grid-template-columns:1fr; }
   .products-grid { grid-template-columns:1fr; }
   .downloads-grid { grid-template-columns:1fr; }
-  section { padding:4rem 1.2rem; }
-  .navbar { padding:0 1.2rem; }
+
+  /* Misc */
   .bundle-badge { width:74px; height:74px; }
 }
