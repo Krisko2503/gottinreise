@@ -296,7 +296,40 @@
     </div>
   </section>
 
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section" id="newsletter">
+    <div class="section-inner newsletter-inner reveal">
+      <span class="eyebrow">Bleib verbunden</span>
+      <h2 class="newsletter-title">Newsletter abonnieren</h2>
+      <div class="divider center"></div>
+      <p class="newsletter-sub">Melde dich jetzt für unseren Newsletter an und erfahre als Erstes von neuen Meditationen und exklusiven Angeboten.</p>
+
+      <form class="newsletter-form" id="newsletter-form"
+            action="https://assets.mailerlite.com/jsonp/2330743/forms/186931456507905264/subscribe"
+            method="POST">
+        <div class="newsletter-field">
+          <input
+            type="email"
+            name="fields[email]"
+            id="newsletter-email"
+            class="newsletter-input"
+            placeholder="E-Mail Adresse"
+            required
+            autocomplete="email"
+          />
+          <!-- Required MailerLite hidden fields -->
+          <input type="hidden" name="ml-submit" value="1" />
+          <input type="hidden" name="anticsrf" value="true" />
+          <button type="submit" class="newsletter-btn">Abonnieren</button>
+        </div>
+        <p class="newsletter-success" id="newsletter-success" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
   <!-- FOOTER -->
+
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">

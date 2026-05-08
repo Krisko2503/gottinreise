@@ -318,3 +318,45 @@ function renderList(id, items) {
   if (!el || !items) return;
   el.innerHTML = items.map(item => `<li>${item}</li>`).join('');
 }
+
+// ── Newsletter form (MailerLite) ──────────────────────────────
+const newsletterForm = document.getElementById('newsletter-form');
+const newsletterSuccess = document.getElementById('newsletter-success');
+if (newsletterForm && newsletterSuccess) {
+  newsletterForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const btn = newsletterForm.querySelector('.newsletter-btn');
+    const emailInput = document.getElementById('newsletter-email');
+
+    // Loading state
+    if (btn) { btn.disabled = true; btn.textContent = '…'; }
+
+    try {
+      // POST to MailerLite — mode:'no-cors' is required because their endpoint
+      // doesn't expose CORS headers. The response will be opaque but the data
+      // is received on their side and confirmation is sent by email.
+      const formData = new FormData(newsletterForm);
+      await fetch(newsletterForm.action, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      });
+
+      // Fire the MailerLite tracking pixel (as their embed code does)
+      fetch('https://assets.mailerlite.com/jsonp/2330743/forms/186931456507905264/takel');
+
+    } catch (err) {
+      // Silent — network errors are non-fatal; MailerLite sends email confirmation anyway
+      console.warn('Newsletter submit error:', err);
+    }
+
+    // Show success & reset
+    newsletterSuccess.textContent = '🌸 Danke für deine Anmeldung!';
+    newsletterSuccess.classList.add('visible');
+    if (emailInput) emailInput.value = '';
+    if (btn) { btn.disabled = false; btn.textContent = 'Abonnieren'; }
+  });
+}
+
+
