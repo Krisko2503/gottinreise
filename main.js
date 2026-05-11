@@ -9,7 +9,7 @@ const products = [
     subtitle: 'Verändere dein Denken – und damit dein Leben',
     tagline: 'Deine sanfte, tägliche Transformation für mehr Selbstwert und innere Stärke',
     price: '19,90 €',
-    img: 'images/product1.jpg',
+    img: 'images/product4.jpg',
     stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
     desc: 'Positive Affirmationen – Deine tägliche Neuausrichtung. Jeder Gedanke formt deine Realität – beginne bewusst neu zu wählen. Nutze kraftvolle Affirmationen, um deinen Geist Schritt für Schritt neu auszurichten. Löse dich von alten, begrenzenden Mustern und öffne dich für neue Möglichkeiten. Integriere die Praxis ganz einfach in deinen Alltag – jederzeit und überall. Spüre, wie sich dein Denken verändert und dein Leben sich neu ausrichtet.',
     forWhom: [
@@ -44,7 +44,7 @@ const products = [
     subtitle: 'Erschaffe bewusst deine Zukunft',
     tagline: 'Visualisiere dein Leben neu und verbinde dich mit deinem zukünftigen Selbst',
     price: '19,90 €',
-    img: 'images/product3.jpg',
+    img: 'images/product1.jpg',
     stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
     desc: 'Vollmond-Meditation – Deine bewusste Transformation. Du bist nicht hier, um dein Leben nur zu beobachten – du bist hier, um es neu zu erschaffen. Lass die Vergangenheit los und öffne dich für eine neue Geschichte, die du selbst schreibst. Aktiviere einen kraftvollen inneren Prozess, der deinem Leben eine klare Richtung gibt. Nutze die Energie des Vollmonds, um Stress, alte Spannungen und emotionale Lasten loszulassen. Spüre, wie Ruhe, Klarheit und Heilung in dir entstehen.',
     forWhom: [
@@ -79,7 +79,7 @@ const products = [
     subtitle: 'Finde Frieden mit dir selbst – und hör auf zu kämpfen',
     tagline: 'Der Moment, in dem du dich selbst und die anderen annimmst, verändert alles',
     price: '19,90 €',
-    img: 'images/product2.jpg',
+    img: 'images/product3.jpg',
     stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
     desc: 'Meditation – Annahme & Transformation. Der Moment, in dem du aufhörst zu kämpfen – und beginnst, wirklich anzunehmen. Erlaube dir, dich selbst und dein Leben so zu sehen, wie es ist – ohne Widerstand. Tauche tiefer und erkenne: In der Annahme liegt der Beginn jeder echten Transformation. Löse innere Spannungen und finde zurück in einen Zustand von Ruhe und Klarheit. Öffne dich für Leichtigkeit, Vertrauen und das Gefühl von innerer Fülle.',
     forWhom: [
@@ -116,7 +116,7 @@ const products = [
     subtitle: 'Dein Weg zu deinem idealen Körper beginnt von innen',
     tagline: 'Verändere deine Gewohnheiten, dein Denken – und dein Körper folgt',
     price: '19,90 €',
-    img: 'images/product4.jpg',
+    img: 'images/product2.jpg',
     stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
     desc: 'Ernährungs-Meditation – Körper & Selbstwert in Balance. Es geht nicht nur darum, wie du dich ernährst – sondern darum, wie du dich selbst behandelst. Löse alte Muster und beginne, deinen Körper bewusst und liebevoll zu nähren. Nutze die Kraft von Visualisierung und innerer Ruhe, um neue Gewohnheiten tief in dir zu verankern. Spüre, wie sich dein Verhältnis zu deinem Körper verändert – leichter, klarer, bewusster.',
     forWhom: [
