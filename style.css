@@ -16,6 +16,7 @@
   --text-mid: #5A3D3D;
   --text-light: #8A6A6A;
   --border: #EDD8CC;
+  --logo-gray: #2A2A2A;
   --shadow: rgba(194,24,91,0.12);
 }
 
@@ -105,14 +106,17 @@ body { font-family:'Montserrat',sans-serif; background:#FFFFFF; color:var(--text
   transition:transform .2s, box-shadow .2s, background .2s, opacity .2s;
 }
 .btn:hover { transform:translateY(-1px); }
-.btn-primary { background:var(--magenta); color:#fff; border:none; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-.btn-primary:hover { background:var(--magenta-dark); box-shadow:0 12px 28px rgba(0,0,0,0.22); }
-.btn-secondary { background:var(--magenta); color:#fff; border:none; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
-.btn-secondary:hover { background:var(--magenta-dark); box-shadow:0 12px 28px rgba(0,0,0,0.22); }
+.btn-primary { background:#fff; color:var(--logo-gray); border:1.5px solid var(--logo-gray); box-shadow:0 8px 20px rgba(0,0,0,0.10); }
+.btn-primary:hover { background:var(--logo-gray); color:#fff; box-shadow:0 12px 28px rgba(0,0,0,0.18); }
+.btn-secondary { background:#fff; color:var(--logo-gray); border:1.5px solid var(--logo-gray); box-shadow:0 8px 20px rgba(0,0,0,0.10); }
+.btn-secondary:hover { background:var(--logo-gray); color:#fff; box-shadow:0 12px 28px rgba(0,0,0,0.18); }
 .btn-outline { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.6); }
 .btn-outline:hover { background:rgba(255,255,255,.1); }
-.btn-ghost { background:transparent; color:var(--magenta); border:1px solid var(--magenta); }
-.btn-ghost:hover { background:var(--magenta); color:#fff; }
+.btn-ghost { background:transparent; color:var(--logo-gray); border:1.5px solid var(--logo-gray); }
+.btn-ghost:hover { background:var(--logo-gray); color:#fff; }
+/* Download CTA — retains cyclamen prominence on danke pages */
+.btn-download { background:var(--magenta); color:#fff; border:none; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.btn-download:hover { background:var(--magenta-dark); box-shadow:0 12px 28px rgba(0,0,0,0.22); }
 
 /* ── NAV COMING SOON ── */
 .nav-coming-soon { opacity:.45 !important; cursor:default !important; pointer-events:none; }
@@ -192,14 +196,14 @@ section { padding:6rem 1.5rem; }
 .products-section { background:#FFFFFF; }
 .products-intro { text-align:center; margin-bottom:3.5rem; font-size:.92rem; color:var(--text-mid); }
 .products-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:2rem; }
-.product-card { background:var(--white); border:1px solid var(--border); border-radius:0; overflow:hidden; transition:transform .3s, box-shadow .3s; display:flex; flex-direction:column; }
+.product-card { background:var(--white); border:1px solid rgba(42,42,42,0.18); border-radius:0; overflow:hidden; transition:transform .3s, box-shadow .3s; display:flex; flex-direction:column; }
 .product-card:hover { transform:translateY(-8px); box-shadow:0 24px 56px rgba(194,24,91,.14); }
 .product-card-img { width:100%; aspect-ratio:1/1; object-fit:cover; transition:transform .5s; }
 .product-card:hover .product-card-img { transform:scale(1.05); }
 .product-card-body { padding:1.4rem 1.2rem 1.6rem; flex:1; display:flex; flex-direction:column; }
 .product-card-title { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:600; color:var(--text-dark); margin-bottom:.45rem; line-height:1.3; }
 .product-card-sub { font-size:.78rem; color:var(--text-light); flex:1; margin-bottom:1.1rem; line-height:1.55; }
-.product-card-price { font-size:1.1rem; font-weight:600; color:var(--magenta); margin-bottom:.9rem; }
+.product-card-price { font-size:1.1rem; font-weight:600; color:var(--magenta); margin-bottom:.9rem; } /* cyclamen price — intentional */
 
 /* ── BENEFITS ── */
 .benefits-section { background:var(--white); }
