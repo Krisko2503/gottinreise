@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  --magenta: #B64191;
-  --magenta-light: #cc52a8;
-  --magenta-dark: #8e3070;
+  --magenta: #c8106a;
+  --magenta-light: #e0257f;
+  --magenta-dark: #9e0d54;
   --peach: #F4A58A;
   --peach-light: #FDE8DF;
   --peach-bg: #FDF6F3;
@@ -105,10 +105,10 @@ body { font-family:'Montserrat',sans-serif; background:#FFFFFF; color:var(--text
   transition:transform .2s, box-shadow .2s, background .2s, opacity .2s;
 }
 .btn:hover { transform:translateY(-1px); }
-.btn-primary { background:#B64191; color:#fff; box-shadow:0 4px 18px rgba(182,65,145,.3); }
-.btn-primary:hover { background:var(--magenta-dark); box-shadow:0 8px 24px rgba(182,65,145,.4); }
-.btn-secondary { background:var(--peach-light); color:var(--magenta-dark); border:1px solid var(--peach); }
-.btn-secondary:hover { background:var(--peach); color:#fff; }
+.btn-primary { background:var(--magenta); color:#fff; border:none; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.btn-primary:hover { background:var(--magenta-dark); box-shadow:0 12px 28px rgba(0,0,0,0.22); }
+.btn-secondary { background:var(--magenta); color:#fff; border:none; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
+.btn-secondary:hover { background:var(--magenta-dark); box-shadow:0 12px 28px rgba(0,0,0,0.22); }
 .btn-outline { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.6); }
 .btn-outline:hover { background:rgba(255,255,255,.1); }
 .btn-ghost { background:transparent; color:var(--magenta); border:1px solid var(--magenta); }
