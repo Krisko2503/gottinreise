@@ -10,7 +10,7 @@ const products = [
     tagline: 'Deine sanfte, tägliche Transformation für mehr Selbstwert und innere Stärke',
     price: '19,90 €',
     img: 'images/product4.jpg',
-    stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
+    stripeLink: 'https://buy.stripe.com/9B6dR85WxeZcawre0cds400',
     desc: 'Positive Affirmationen – Deine tägliche Neuausrichtung. Jeder Gedanke formt deine Realität – beginne bewusst neu zu wählen. Nutze kraftvolle Affirmationen, um deinen Geist Schritt für Schritt neu auszurichten. Löse dich von alten, begrenzenden Mustern und öffne dich für neue Möglichkeiten. Integriere die Praxis ganz einfach in deinen Alltag – jederzeit und überall. Spüre, wie sich dein Denken verändert und dein Leben sich neu ausrichtet.',
     forWhom: [
       'oft negativ denkst oder dich selbst blockierst',
