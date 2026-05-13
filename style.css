@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-  --magenta: #c8106a;
-  --magenta-light: #e0257f;
-  --magenta-dark: #9e0d54;
+  --magenta: #B64191;
+  --magenta-light: #CE5CAD;
+  --magenta-dark: #8C2E6E;
   --peach: #F4A58A;
   --peach-light: #FDE8DF;
   --peach-bg: #FDF6F3;
@@ -17,7 +17,7 @@
   --text-light: #8A6A6A;
   --border: #EDD8CC;
   --logo-gray: #2A2A2A;
-  --shadow: rgba(194,24,91,0.12);
+  --shadow: rgba(182,65,145,0.12);
 }
 
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
@@ -61,7 +61,7 @@ body { font-family:'Montserrat',sans-serif; background:#FFFFFF; color:var(--text
 .navbar.scrolled .nav-logo .logo-white { display:none; }
 .navbar.scrolled .nav-logo .logo-dark  { display:block; }
 
-.nav-logo:hover .logo-white { transform:scale(1.06); filter:drop-shadow(0 2px 10px rgba(194,24,91,0.5)); }
+.nav-logo:hover .logo-white { transform:scale(1.06); filter:drop-shadow(0 2px 10px rgba(182,65,145,0.5)); }
 .nav-logo:hover .logo-dark  { transform:scale(1.06); }
 .nav-links { display:flex; align-items:center; gap:2.2rem; list-style:none; }
 .nav-links a {
@@ -106,8 +106,8 @@ body { font-family:'Montserrat',sans-serif; background:#FFFFFF; color:var(--text
   transition:transform .2s, box-shadow .2s, background .2s, opacity .2s;
 }
 .btn:hover { transform:translateY(-1px); }
-.btn-primary { background:#fff; color:var(--logo-gray); border:1.5px solid var(--logo-gray); box-shadow:0 8px 20px rgba(0,0,0,0.10); }
-.btn-primary:hover { background:var(--logo-gray); color:#fff; box-shadow:0 12px 28px rgba(0,0,0,0.18); }
+.btn-primary { background:var(--magenta); color:#fff; box-shadow:0 6px 24px rgba(182,65,145,.35); }
+.btn-primary:hover { background:var(--magenta-dark); box-shadow:0 10px 32px rgba(182,65,145,.5); }
 .btn-secondary { background:#fff; color:var(--logo-gray); border:1.5px solid var(--logo-gray); box-shadow:0 8px 20px rgba(0,0,0,0.10); }
 .btn-secondary:hover { background:var(--logo-gray); color:#fff; box-shadow:0 12px 28px rgba(0,0,0,0.18); }
 .btn-outline { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.6); }
@@ -117,6 +117,10 @@ body { font-family:'Montserrat',sans-serif; background:#FFFFFF; color:var(--text
 /* Download CTA — retains cyclamen prominence on danke pages */
 .btn-download { background:var(--magenta); color:#fff; border:none; box-shadow:0 8px 20px rgba(0,0,0,0.15); }
 .btn-download:hover { background:var(--magenta-dark); box-shadow:0 12px 28px rgba(0,0,0,0.22); }
+
+/* Hero CTA — 85% opacity cyclamen (client spec) */
+#hero-cta-btn { background-color:rgba(182, 65, 145, 0.85); box-shadow:0 6px 24px rgba(182,65,145,.3); }
+#hero-cta-btn:hover { background-color:rgba(140, 46, 110, 0.92); }
 
 /* ── NAV COMING SOON ── */
 .nav-coming-soon { opacity:.45 !important; cursor:default !important; pointer-events:none; }
