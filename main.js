@@ -280,10 +280,13 @@ if (document.querySelector('.product-page')) {
   renderList('prod-why-works', prod.whyItWorks);
   renderList('prod-what-changes', prod.whatChanges);
 
-  // Related products
+  // Related products — exclude the current product AND any bundle items
   const grid = document.getElementById('related-products');
   if (grid) {
-    products.filter(p => p.id !== id).slice(0, 4).forEach(p => {
+    products
+      .filter(p => p.id !== id && !p.isBundle)
+      .slice(0, 4)
+      .forEach(p => {
       grid.innerHTML += `
         <div class="product-card reveal">
           <img src="${p.img}" alt="${p.title}" class="product-card-img" />

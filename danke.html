@@ -26,15 +26,15 @@
       justify-content: center; padding: 120px 1.5rem 6rem; text-align: center;
     }
     .confetti-ring {
-      width: 110px; height: 110px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--magenta) 0%, #e91e8c 100%);
+      width: 110px; height: 110px; border-radius: 0;
+      background: #2e7d32;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 2.2rem;
-      box-shadow: 0 0 0 20px rgba(194,24,91,.08), 0 12px 50px rgba(194,24,91,.35);
+      box-shadow: 0 0 0 16px rgba(46,125,50,.09), 0 12px 40px rgba(46,125,50,.30);
       animation: scaleIn .65s cubic-bezier(.34,1.56,.64,1) both;
     }
     .confetti-ring svg { width: 52px; height: 52px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
-    .danke-eyebrow { font-size:.78rem; letter-spacing:.26em; text-transform:uppercase; color:var(--magenta); margin-bottom:1rem; display:block; }
+    .danke-eyebrow { font-size:.78rem; letter-spacing:.26em; text-transform:uppercase; color:#2e7d32; margin-bottom:1rem; display:block; }
     .danke-title {
       font-family:'Playfair Display',serif;
       font-size: clamp(2.2rem,5vw,3.6rem);
@@ -50,10 +50,10 @@
       text-align: center; margin-bottom: 2rem;
     }
     .bundle-download-card {
-      background: var(--white); border: 1.5px solid var(--magenta); border-radius: 20px;
+      background: var(--white); border: 1.5px solid var(--magenta); border-radius: 0;
       padding: 2rem 2.2rem; margin-bottom: 1.5rem;
       display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
-      box-shadow: 0 8px 30px rgba(194,24,91,.12);
+      box-shadow: 0 8px 30px rgba(182,65,145,.12);
       flex-wrap: wrap;
     }
     .bundle-download-card .info h4 {
@@ -65,9 +65,30 @@
     .danke-divider p { font-size:.9rem; color:var(--text-light); margin-bottom:1.5rem; }
     .support-box {
       width: 100%; max-width: 560px; background: var(--white);
-      border: 1px solid var(--border); border-radius: 16px;
+      border: 1px solid var(--border); border-radius: 0;
       padding: 2rem 2.2rem; text-align: center; margin: 0 auto 3.5rem;
     }
+    /* Cross-sell section */
+    .crosssell-section { width: 100%; max-width: 960px; margin: 0 auto 4rem; }
+    .crosssell-section h3 {
+      font-family:'Playfair Display',serif; font-size: 1.5rem; font-weight: 600;
+      color: var(--text-dark); text-align: center; margin-bottom: .5rem;
+    }
+    .crosssell-section .cs-sub { font-size:.9rem; color:var(--text-light); text-align:center; margin-bottom:2rem; }
+    .crosssell-grid {
+      display: grid; grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 1.4rem;
+    }
+    .cs-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 0;
+      overflow: hidden; transition: transform .3s, box-shadow .3s;
+      display: flex; flex-direction: column; text-decoration: none;
+    }
+    .cs-card:hover { transform: translateY(-6px); box-shadow: 0 18px 48px rgba(182,65,145,.13); }
+    .cs-card img { width:100%; aspect-ratio:1/1; object-fit:cover; display:block; transition: transform .5s; }
+    .cs-card:hover img { transform: scale(1.05); }
+    .cs-card-body { padding: 1rem 1rem 1.2rem; flex: 1; display: flex; flex-direction: column; }
+    .cs-card-title { font-family:'Playfair Display',serif; font-size:.97rem; font-weight:600; color:var(--text-dark); margin-bottom:.3rem; line-height:1.3; }
+    .cs-card-price { font-size:.9rem; color:var(--magenta); font-weight:600; margin-top:auto; padding-top:.6rem; }
     .support-box p { font-size:.95rem; color:var(--text-mid); line-height:1.8; }
     .support-box a { color: var(--magenta); text-decoration:none; font-weight:600; }
     @media(max-width:640px) {
@@ -176,7 +197,14 @@
     </div>
 
     <!-- CTA back -->
-    <a href="index.html" class="btn btn-outline" style="background:var(--magenta);color:#fff;box-shadow:0 6px 24px rgba(194,24,91,.35)">← Zurück zur Startseite</a>
+    <!-- Cross-sell: other meditations (bundle excluded, purchased item excluded) -->
+    <div class="crosssell-section" id="crosssell-section" style="display:none">
+      <h3>Das könnte dir auch gefallen</h3>
+      <p class="cs-sub">Entdecke weitere Meditationen aus unserer Göttinreise-Welt</p>
+      <div class="crosssell-grid" id="crosssell-grid"></div>
+    </div>
+
+    <a href="index.html" class="btn btn-outline" style="background:var(--magenta);color:#fff;box-shadow:0 6px 24px rgba(182,65,145,.35)">← Zurück zur Startseite</a>
 
   </main>
 
@@ -217,5 +245,47 @@
     </div>
   </footer>
 
+<script src="main.js"></script>
+<script>
+  // danke.html page logic
+  // Reads ?purchased_id=N from the URL.
+  // - If a single meditation was purchased: hide the bundle download card,
+  //   show the cross-sell grid with the other 4 single meditations.
+  // - If the bundle was purchased (no id, or id=0): keep the bundle card,
+  //   no cross-sell needed.
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const purchasedId = parseInt(params.get('purchased_id')) || 0;
+
+    // Single meditation purchased — hide bundle download card
+    const bundleCard = document.querySelector('.bundle-download-card');
+    if (purchasedId > 0 && bundleCard) {
+      bundleCard.style.display = 'none';
+    }
+
+    // Build cross-sell (only for single meditation purchasers)
+    if (purchasedId > 0) {
+      const section = document.getElementById('crosssell-section');
+      const grid = document.getElementById('crosssell-grid');
+      // products[] is defined in main.js — all items are single meditations (no bundle object)
+      const recs = products.filter(p => p.id !== purchasedId);
+      if (recs.length > 0 && section && grid) {
+        recs.forEach(p => {
+          const a = document.createElement('a');
+          a.href = 'produkt.html?id=' + p.id;
+          a.className = 'cs-card';
+          a.innerHTML = `
+            <img src="${p.img}" alt="${p.title}" loading="lazy" />
+            <div class="cs-card-body">
+              <span class="cs-card-title">${p.title}</span>
+              <span class="cs-card-price">${p.price}</span>
+            </div>`;
+          grid.appendChild(a);
+        });
+        section.style.display = 'block';
+      }
+    }
+  })();
+</script>
 </body>
 </html>
