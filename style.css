@@ -267,6 +267,7 @@ footer { background:var(--text-dark); color:rgba(255,255,255,.75); padding:4.5re
 .product-page-price { font-family:'Playfair Display',serif; font-size:3rem; font-weight:700; color:var(--magenta); margin-bottom:1.6rem; }
 .product-page-badges { display:flex; gap:.7rem; flex-wrap:wrap; margin-bottom:2rem; }
 .badge { display:flex; align-items:center; gap:.4rem; background:var(--cream); border:1px solid var(--border); border-radius:20px; padding:.4rem 1rem; font-size:.8rem; color:var(--text-mid); font-weight:500; }
+/* Buy button on product detail page — white/gray border (btn-secondary inherits), full-width */
 .product-buy-btn { width:100%; justify-content:center; font-size:.95rem; padding:1.1rem 2rem; margin-bottom:1.4rem; }
 .product-trust { padding:1.2rem 1.5rem; background:var(--peach-bg); border-radius:14px; font-size:.86rem; color:var(--text-mid); line-height:2; }
 .product-trust a { color:var(--magenta); text-decoration:none; }
