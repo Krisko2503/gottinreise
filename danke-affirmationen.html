@@ -33,13 +33,13 @@
     .dh-badge {
       display: inline-flex; align-items: center; gap: .5rem;
       background: #fff; border: 1px solid rgba(42,42,42,0.15);
-      border-radius: 2rem; padding: .45rem 1.1rem;
+      border-radius: 0; padding: .45rem 1.1rem;
       font-size: .72rem; font-weight: 600; letter-spacing: .12em;
       text-transform: uppercase; color: var(--logo-gray);
       margin-bottom: 1.4rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.07);
     }
-    .dh-badge::before { content: "✓"; color: var(--magenta); font-size: .85rem; }
+    .dh-badge::before { content: "✓"; color: #fff; font-size: .85rem; background: #2e7d32; padding: .1rem .3rem; }
 
     /* ── Greeting ── */
     .dh-greeting {
@@ -208,23 +208,45 @@
 
       <div class="dh-crosssell-grid">
 
-        <!-- Bundle -->
-        <a href="index.html#bundle" class="dh-cross-card">
-          <img src="images/bundle.png" alt="Göttinreise Bundle – alle 5 Meditationen" />
-          <div class="dh-cross-card-body">
-            <span class="dh-cross-card-eyebrow">Meistgekauft</span>
-            <p class="dh-cross-card-title">Alle 5 Meditationen – Bundle</p>
-            <p class="dh-cross-card-price">75 €</p>
-            <span class="dh-cross-card-btn">Bundle entdecken</span>
-          </div>
-        </a>
-
         <!-- Fülle und Wohlstand -->
         <a href="produkt.html?id=2" class="dh-cross-card">
           <img src="images/product1.jpg" alt="Fülle und Wohlstand" />
           <div class="dh-cross-card-body">
             <span class="dh-cross-card-eyebrow">Meditation</span>
             <p class="dh-cross-card-title">Fülle und Wohlstand</p>
+            <p class="dh-cross-card-price">19,90 €</p>
+            <span class="dh-cross-card-btn">Mehr erfahren</span>
+          </div>
+        </a>
+
+        <!-- Annahme -->
+        <a href="produkt.html?id=3" class="dh-cross-card">
+          <img src="images/product3.jpg" alt="Annahme" />
+          <div class="dh-cross-card-body">
+            <span class="dh-cross-card-eyebrow">Meditation</span>
+            <p class="dh-cross-card-title">Annahme</p>
+            <p class="dh-cross-card-price">19,90 €</p>
+            <span class="dh-cross-card-btn">Mehr erfahren</span>
+          </div>
+        </a>
+
+        <!-- Ernährungs-Meditation -->
+        <a href="produkt.html?id=4" class="dh-cross-card">
+          <img src="images/product2.jpg" alt="Ernährungs-Meditation" />
+          <div class="dh-cross-card-body">
+            <span class="dh-cross-card-eyebrow">Meditation</span>
+            <p class="dh-cross-card-title">Ernährungs-Meditation</p>
+            <p class="dh-cross-card-price">19,90 €</p>
+            <span class="dh-cross-card-btn">Mehr erfahren</span>
+          </div>
+        </a>
+
+        <!-- Verbindung zur Intuition -->
+        <a href="produkt.html?id=5" class="dh-cross-card">
+          <img src="images/product5.jpg" alt="Verbindung zur Intuition" />
+          <div class="dh-cross-card-body">
+            <span class="dh-cross-card-eyebrow">Meditation</span>
+            <p class="dh-cross-card-title">Verbindung zur Intuition</p>
             <p class="dh-cross-card-price">19,90 €</p>
             <span class="dh-cross-card-btn">Mehr erfahren</span>
           </div>

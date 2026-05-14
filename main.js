@@ -1,11 +1,6 @@
 // ── Product Data ──────────────────────────────────────────────
-// STRIPE REDIRECT SETUP:
-// Each product's stripeLink should redirect to its own danke page after payment.
-// In your Stripe Dashboard → Payment Links → (select link) → After payment:
-//   - Product 1 (Affirmationen) → danke-affirmationen.html
-//   - Product 2–5 (other single meditations) → danke.html?purchased_id=N
-//   - Bundle → danke-bundle.html
-// Alternatively, append ?success_url= to the Stripe link URL below (Checkout only).
+// To activate payments: replace each stripeLink with your real Stripe Payment Link URL.
+// After payment, Stripe will redirect to danke.html (configure in your Stripe Dashboard).
 
 const products = [
   {
@@ -15,9 +10,7 @@ const products = [
     tagline: 'Deine sanfte, tägliche Transformation für mehr Selbstwert und innere Stärke',
     price: '19,90 €',
     img: 'images/product4.jpg',
-    // ↓ In Stripe Dashboard, set this link's success URL to: danke-affirmationen.html
     stripeLink: 'https://buy.stripe.com/9B6dR85WxeZcawre0cds400',
-    dankeUrl: 'danke-affirmationen.html',
     desc: 'Positive Affirmationen – Deine tägliche Neuausrichtung. Jeder Gedanke formt deine Realität – beginne bewusst neu zu wählen. Nutze kraftvolle Affirmationen, um deinen Geist Schritt für Schritt neu auszurichten. Löse dich von alten, begrenzenden Mustern und öffne dich für neue Möglichkeiten. Integriere die Praxis ganz einfach in deinen Alltag – jederzeit und überall. Spüre, wie sich dein Denken verändert und dein Leben sich neu ausrichtet.',
     forWhom: [
       'oft negativ denkst oder dich selbst blockierst',
@@ -53,7 +46,6 @@ const products = [
     price: '19,90 €',
     img: 'images/product1.jpg',
     stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
-    dankeUrl: 'danke.html?purchased_id=2',
     desc: 'Vollmond-Meditation – Deine bewusste Transformation. Du bist nicht hier, um dein Leben nur zu beobachten – du bist hier, um es neu zu erschaffen. Lass die Vergangenheit los und öffne dich für eine neue Geschichte, die du selbst schreibst. Aktiviere einen kraftvollen inneren Prozess, der deinem Leben eine klare Richtung gibt. Nutze die Energie des Vollmonds, um Stress, alte Spannungen und emotionale Lasten loszulassen. Spüre, wie Ruhe, Klarheit und Heilung in dir entstehen.',
     forWhom: [
       'dein Leben und deine Zukunft bewusst gestalten möchtest',
@@ -89,7 +81,6 @@ const products = [
     price: '19,90 €',
     img: 'images/product3.jpg',
     stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
-    dankeUrl: 'danke.html?purchased_id=3',
     desc: 'Meditation – Annahme & Transformation. Der Moment, in dem du aufhörst zu kämpfen – und beginnst, wirklich anzunehmen. Erlaube dir, dich selbst und dein Leben so zu sehen, wie es ist – ohne Widerstand. Tauche tiefer und erkenne: In der Annahme liegt der Beginn jeder echten Transformation. Löse innere Spannungen und finde zurück in einen Zustand von Ruhe und Klarheit. Öffne dich für Leichtigkeit, Vertrauen und das Gefühl von innerer Fülle.',
     forWhom: [
       'aufhören willst, gegen dich selbst zu kämpfen',
@@ -127,7 +118,6 @@ const products = [
     price: '19,90 €',
     img: 'images/product2.jpg',
     stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
-    dankeUrl: 'danke.html?purchased_id=4',
     desc: 'Ernährungs-Meditation – Körper & Selbstwert in Balance. Es geht nicht nur darum, wie du dich ernährst – sondern darum, wie du dich selbst behandelst. Löse alte Muster und beginne, deinen Körper bewusst und liebevoll zu nähren. Nutze die Kraft von Visualisierung und innerer Ruhe, um neue Gewohnheiten tief in dir zu verankern. Spüre, wie sich dein Verhältnis zu deinem Körper verändert – leichter, klarer, bewusster.',
     forWhom: [
       'dein Essverhalten nachhaltig verändern möchtest',
@@ -162,7 +152,6 @@ const products = [
     price: '19,90 €',
     img: 'images/product5.jpg',
     stripeLink: 'STRIPE_PAYMENT_LINK_PLACEHOLDER',
-    dankeUrl: 'danke.html?purchased_id=5',
     desc: 'Meditation zur Verbindung mit deiner Intuition. Öffne den Zugang zu deiner inneren Weisheit und beginne, deiner Intuition bewusst zu vertrauen. Tauche unter die Oberfläche des Alltags und finde den Ort in dir, an dem Klarheit entsteht. Löse dich von äußeren Einflüssen und verbinde dich wieder mit deiner eigenen Wahrheit. Spüre, wie mit jeder Minute dein Vertrauen wächst und deine innere Stimme klarer wird.',
     forWhom: [
       'dich mit deiner inneren Führung verbinden willst',
@@ -194,7 +183,6 @@ const products = [
 ];
 
 const BUNDLE_STRIPE_LINK = 'STRIPE_PAYMENT_LINK_PLACEHOLDER';
-// Bundle success URL → danke-bundle.html (set in Stripe Dashboard)
 
 // ── Navbar: transparent over hero, solid on scroll ───────────
 const navbar = document.getElementById('navbar');
